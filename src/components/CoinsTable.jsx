@@ -51,8 +51,11 @@ const CoinsTable = () => {
             display:'flex',
             alignItems:'center',
             justifyContent:'center',
+            
             '& .MuiPaginationItem-root':{
-                color: 'rgb(209, 174, 19)'
+                color: 'rgb(209, 174, 19)',
+                marginTop:10,
+                marginBottom: 10,
             }
 
         }
@@ -69,8 +72,11 @@ const CoinsTable = () => {
        <Container style={{textAlign: 'center'}}>
 
            <Typography 
-           variant='h4'
-           style={{margin: 18}}
+           variant='h5'
+           style={{
+               margin: 18,
+               fontWeight:'500'
+            }}
            >
               Cryptocurrency Prices by Market Cap
            </Typography>
@@ -123,7 +129,7 @@ const CoinsTable = () => {
                                                 <img 
                                                 src={row.image}
                                                 alt={row.name}
-                                                height='50'
+                                                height='30'
                                                 style={{marginBottom:10}}/>
                                                 <div style={{display:'flex', flexDirection:'column'}}>
                                                     <span style={{

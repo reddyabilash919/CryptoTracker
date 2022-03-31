@@ -4,7 +4,7 @@ import React from 'react'
 
  const useStyles = makeStyles((() => ({
      content: {
-         backgroundImage : 'url(./crypto1.png)',
+         backgroundImage : 'url(./crypto.png)',
 
      },
      contentData:{
@@ -33,6 +33,8 @@ const Content = () => {
                 style={{
                     fontWeight:'bold',
                     marginBottom:15,
+                    
+                    marginTop:15
                 }}
                 >
                     Crypto Tracker
