@@ -23,5 +23,8 @@ CryptoTracker application is built on react js that will let users to track all 
 
 ## What the app looks like 
 
+![](screenshot/appV1.png)
+![screenshot/appV2.png)
+
 
 
