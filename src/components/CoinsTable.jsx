@@ -115,10 +115,7 @@ const CoinsTable = () => {
                                         <TableRow key={row.name} className={classes.row}>
                                             <TableCell align='right'>
                                                 {row.market_cap_rank}
-
-
                                             </TableCell>
-
                                             <TableCell component='th'
                                             scope='row'
                                             style={{
