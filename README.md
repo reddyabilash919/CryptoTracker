@@ -1,5 +1,8 @@
 # CryptoTracker
-CryptoTracker application is built on react js that will let users to track all cryptocurrency list via market cap with prices difference in 1H, 24H and 7D range in AUD and USD currencies
+CryptoTracker application is built on react js that will let users to track all cryptocurrency list via market cap with prices difference in 1h, 24h and 7d range in AUD and USD currencies
+
+## Application URL
+https://main.d2lpjdsu5y0dab.amplifyapp.com/
 
 ## How to run the application
 1. Clone the application or fork.
@@ -8,7 +11,7 @@ CryptoTracker application is built on react js that will let users to track all 
 4. Go to http://localhost:300 on your browser and start using the application
 
 ## API Source Doc
-1. https://www.coingecko.com/en/api/documentation
+ https://www.coingecko.com/en/api/documentation
 
 ## User stories
 - A user can view list of all cryptocurrencies
