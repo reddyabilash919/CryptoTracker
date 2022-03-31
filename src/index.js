@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import ContextAPI from './ContextAPI';
+import ContextAPI from './components/ContextAPI';
 
 ReactDOM.render(
   <React.StrictMode>

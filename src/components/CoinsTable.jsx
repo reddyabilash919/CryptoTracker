@@ -5,7 +5,7 @@ import {React,useContext,useEffect,useState} from 'react';
 import { Container, LinearProgress, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
 import Pagination from '@mui/material/Pagination';
 import {List} from '../config/endpoints';
-import { AppContext } from '../ContextAPI';
+import { AppContext } from './ContextAPI';
 import { numberWithCommas } from '../config/commonFunctions';
 
 const CoinsTable = () => {

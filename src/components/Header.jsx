@@ -2,7 +2,7 @@ import { AppBar, Container, MenuItem, Select, Toolbar, Typography } from '@mui/m
 import {  ThemeProvider, createTheme } from '@mui/material/styles';
 import { makeStyles } from "@mui/styles";
 import React, { useContext } from 'react'
-import {AppContext} from '../ContextAPI';
+import {AppContext} from './ContextAPI';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 
 
