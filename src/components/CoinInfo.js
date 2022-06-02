@@ -4,11 +4,35 @@ import { AppContext } from './ContextAPI';
 import axios from 'axios';
 import { makeStyles } from "@mui/styles";
 import { Line } from "react-chartjs-2";
+import { chartDays } from "../config/data";
+import SelectButton from "./SelectButton";
+import { CircularProgress} from '@mui/material';
 import {
-  CircularProgress,
+ 
   createTheme,
   ThemeProvider,
 } from '@mui/material/styles';
+
+import {
+Chart as ChartJS,
+CategoryScale,
+LinearScale,
+PointElement,
+LineElement,
+Title,
+Tooltip,
+Legend,
+} from 'chart.js';
+
+ChartJS.register(
+CategoryScale,
+LinearScale,
+PointElement,
+LineElement,
+Title,
+Tooltip,
+Legend
+);
 
 const CoinInfo = ({coin}) => {
     const [ historicalData, setHistoricalData] = useState();
@@ -16,9 +40,10 @@ const CoinInfo = ({coin}) => {
     const [flag,setflag] = useState(false);
 
     const {currency} = useContext(AppContext);
+    console.log(currency);
 
     const fetchData = async () =>{
-        const {data} = await axios.get(HistoricalChart(coin.id,range));
+        const {data} = await axios.get(HistoricalChart(coin.id,range,currency));
         setHistoricalData(data.prices);
     }
 
@@ -34,9 +59,6 @@ const CoinInfo = ({coin}) => {
       type: "dark",
     },
   });
- 
-  const classes = useStyles();
-
   const useStyles = makeStyles((theme) => ({
     container: {
       width: "75%",
@@ -48,7 +70,7 @@ const CoinInfo = ({coin}) => {
       padding: 40,
     },
   }));
-
+  const classes = useStyles();
 
   return (
     
@@ -57,7 +79,7 @@ const CoinInfo = ({coin}) => {
             {
                 !historicalData ?(
                     <CircularProgress 
-                    style={{color:"gold"}}
+                    style={{color: 'rgb(209, 174, 19)'}}
                     size={250}
                     thickness={1}/>
                 ):(
@@ -99,11 +121,11 @@ const CoinInfo = ({coin}) => {
             >
               {chartDays.map((day) => (
                 <SelectButton
-                  key={range.value}
-                  onClick={() => {setDays(range.value);
+                  key={day.value}
+                  onClick={() => {setRange(day.value);
                     setflag(false);
                   }}
-                  selected={day.value === days}
+                  selected={day.value === range}
                 >
                   {day.label}
                 </SelectButton>
@@ -112,7 +134,6 @@ const CoinInfo = ({coin}) => {
                    </>
                 )
             }
-
         </div>
 
     </ThemeProvider>

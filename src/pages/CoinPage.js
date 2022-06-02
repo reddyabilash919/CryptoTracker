@@ -24,11 +24,17 @@ const CoinPage = () =>{
     },[]);
 
     const useStyles = makeStyles(()=>({
+        container:{
+            display:"flex"
+        },
         sideBar: {
             width:"30%",
+            paddingTop:50,
+            paddingBottom: 50,
             display:"flex",
             flexDirection: "column",
             alignItems: "center",
+            marginTop:25,
             marginTop:25,
             borderRight: "2px solid grey"
 
@@ -41,7 +47,7 @@ const CoinPage = () =>{
     }));
     const classes = useStyles();
     if(!coin){
-        return <LinearProgress style={{backgroundColor: "gold"}} />
+        return <LinearProgress style={{backgroundColor: 'rgb(209, 174, 19)'}} />
     }
     
     return (
