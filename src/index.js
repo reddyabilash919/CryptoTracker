@@ -8,9 +8,7 @@ ReactDOM.render(
     <ContextAPI>
     <App />
     </ContextAPI>
-     
-    
-  </React.StrictMode>,
+  </React.StrictMode>,  
   document.getElementById('root')
 );
 

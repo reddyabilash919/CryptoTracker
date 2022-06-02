@@ -7,6 +7,7 @@ import Pagination from '@mui/material/Pagination';
 import {List} from '../config/endpoints';
 import { AppContext } from './ContextAPI';
 import { numberWithCommas } from '../config/commonFunctions';
+import {useNavigate} from 'react-router-dom';
 
 const CoinsTable = () => {
     const [coins,setCoins] = useState([]);
@@ -20,6 +21,7 @@ const CoinsTable = () => {
         setLoading(true);
         const {data} = await axios.get(List(currency));
         setCoins(data);
+        console.log(data);
         setLoading(false);
     };
 
@@ -63,6 +65,7 @@ const CoinsTable = () => {
     }))  
     
     const classes = useStyles();
+    const navigate = useNavigate();
     
  
   
@@ -112,7 +115,10 @@ const CoinsTable = () => {
                                 coins.slice((page-1) *10,(page -1) * 10 + 10).map((row) =>{
 
                                     return (
-                                        <TableRow key={row.name} className={classes.row}>
+                                        <TableRow key={row.name} className={classes.row}
+                                        onClick={()=>{
+                                           navigate(`/coin/${row.id}`)
+                                        }}>
                                             <TableCell align='right'>
                                                 {row.market_cap_rank}
                                             </TableCell>
